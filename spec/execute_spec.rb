@@ -5,7 +5,7 @@ describe 'execute' do
 
   it 'should return the expected value' do
     position = run("test_input.txt")
-    expect(position).to eq(5)
+    expect(position).to eq(10)
   end
 
 

@@ -7,20 +7,19 @@ def run(data_file="submarine_kata_input.txt")
   load_sub_data(data_file).each do |data|
     direction = data[:direction]
     distance = data[:distance]
-
     if direction == "down"
-      current_x -= 1
-      max_depth = [max_depth, current_x].min
+      current_x -= distance
+      max_depth = [max_depth, current_x]
     elsif direction == "up"
-      current_x += 1
-      current_x = [current_x, 0].max
+      current_x += distance
+      current_x = (current_x > 0) ? 0 : current_x
     elsif direction == "forward"
       current_y += distance
-      maximum_distance = [maximum_distance, current_y].max
+      maximum_distance = [maximum_distance, current_y]
     end
   end
 
-  position = -max_depth * maximum_distance
+  position = -current_x * current_y
   puts "Current X: #{current_x}"
   puts "Current Y: #{current_y}"
   puts "Maximum Depth: #{max_depth}"
