@@ -12,8 +12,8 @@ def load_input_file(file_path)
   input_array
 end
 
-def load_sub_data()
+def load_sub_data(data_file = "submarine_kata_input.txt")
   current_dir = File.dirname(__FILE__)
-  file_path = File.join(current_dir, '../data/submarine_kata_input.txt')
+  file_path = File.join(current_dir, "../data/#{data_file}")
   input_data = load_input_file(file_path)
 end
