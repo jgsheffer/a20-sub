@@ -4,9 +4,17 @@ require_relative '../src/execute'
 describe 'execute' do
 
   it 'should return the expected value' do
-    position = run("test_input.txt")
+    position = run("/test/happy.txt")
     expect(position).to eq(10)
   end
 
+  it 'subs should not go above the water' do
+    position = run("/test/flying_sub.txt")
+    expect(position).to eq(10)
+  end
 
+  it 'should ignore incomplete or invalid data' do
+    position = run("/test/invalid_data.txt")
+    expect(position).to eq(10)
+  end
 end

@@ -3,10 +3,12 @@ def load_input_file(file_path)
 
   File.foreach(file_path) do |line|
     direction, distance = line.chomp.split(/\s+/)
-    distance = distance.empty? ? nil : distance.to_i
-    direction = direction.empty? ? nil : direction
+    if(distance != nil && direction != nil)
+      distance = distance.empty? ? nil : distance.to_i
+      direction = direction.empty? ? nil : direction
 
-    input_array << { distance: distance, direction: direction }
+      input_array << { distance: distance, direction: direction }
+    end
   end
 
   input_array
