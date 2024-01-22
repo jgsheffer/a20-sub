@@ -1,4 +1,23 @@
-# a20-sub
+# Jared Sheffer AugustTwenty Submission
+## Notes and considerations
+
+* I wrote the code in ruby since it seemed like an easy way to be able to spin up a simple program with some easy unit testing.
+* I considered having some fun and adding some kind of UI but decided that it was too far outside the scope of the current requirements and time constraints
+
+* The input from the requirements is available in the data folder as are some test data sheets I used in my unit testing to validate some scenarios I saw as being likely given the data format
+
+* When determining the Y coordinate or depth I made it negative for the purposes of visualization and understanding.  
+  Only when caluclating the final product of the depth and distance to I interpret it as a positive number
+## How to execute program
+
+```
+    ruby ./src/run.rb
+```
+## How to run tests
+```
+    bundle exec rspec
+```
+### Requirements
 --- Submarine Puzzle ---
 
 Bam! You've found yourself teleported in a submarine, deep under the sea.

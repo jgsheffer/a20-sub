@@ -1,7 +1,7 @@
 require 'rspec'
-require_relative '../src/execute'
+require_relative '../src/sub_runner'
 
-describe 'execute' do
+describe 'sub_runner' do
 
   it 'should return the expected value' do
     position = run("/test/happy.txt")
