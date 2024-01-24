@@ -27,6 +27,8 @@ def run(data_file="submarine_kata_input.txt")
     elsif direction == "forward"
       current_x += value
       current_y += aim * value
+    else
+      throw "Invalid direction: #{direction}"
     end
   end
 
