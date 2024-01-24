@@ -10,31 +10,31 @@ require_relative './input_parser'
 
 def run(data_file="submarine_kata_input.txt")
   current_y = 0
+  # 6
   current_x = 0
-  max_depth = 0
-  maximum_distance = 0
+  # 2
+  aim = 0
+# 1
+
   load_sub_data(data_file).each do |data|
     direction = data[:direction]
-    distance = data[:distance]
+    value = data[:value]
+    puts "Direction: #{direction}, Value: #{value}"
     if direction == "down"
-      current_y -= distance
-      max_depth = (current_y < max_depth) ? current_y : max_depth
+      aim += value
     elsif direction == "up"
-      current_y += distance
-      current_y = (current_y > 0) ? 0 : current_y
+      aim -= value
     elsif direction == "forward"
-      current_x += distance
-      maximum_distance = current_x
+      current_x += value
+      current_y += aim * value
     end
   end
 
-  position = -current_y * current_x
+  position = current_y * current_x
   puts "\n:::::::::::::::::::::::::"
   puts "Using Data file: #{data_file}"
   puts "Current X: #{current_x}"
   puts "Current Y: #{current_y}"
-  puts "Maximum Depth: #{max_depth}"
-  puts "Maximum Distance: #{maximum_distance}"
   puts "Current Depth x Current Distance: #{position}"
   puts ":::::::::::::::::::::::::"
   return position
